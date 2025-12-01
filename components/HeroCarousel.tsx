@@ -15,7 +15,7 @@ export default function HeroCarousel() {
   useEffect(() => {
     const id = setInterval(
       () => setActiveIndex((prev) => (prev + 1) % slides.length),
-      3000 // 5 saniyede bir slayt değişimi
+      5000
     );
     return () => clearInterval(id);
   }, []);
@@ -29,28 +29,31 @@ export default function HeroCarousel() {
     <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-slate-900">
       {/* Slides */}
       <div className="absolute inset-0">
-        {slides.map((slide, index) => (
-          <div
-            key={slide.id}
-            className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
-              index === activeIndex
-                ? "opacity-100 scale-110"
-                : "opacity-0 scale-100"
-            }`}
-            style={{
-              backgroundImage: `url('${slide.imageUrl}')`,
-              transition: "opacity 1.2s ease-in-out, transform 6s ease-out"
-            }}
-          />
-        ))}
+        {slides.map((slide, index) => {
+          const isActive = index === activeIndex;
 
-        {/* Gradient Overlay */}
+          return (
+            <div
+              key={slide.id}
+              className={`
+                absolute inset-0 bg-cover bg-center 
+                transition-all duration-[1500ms] ease-[cubic-bezier(0.65,0,0.35,1)]
+                ${isActive ? "opacity-100 translate-x-0 scale-105" : "opacity-0 -translate-x-20 scale-100"}
+              `}
+              style={{
+                backgroundImage: `url('${slide.imageUrl}')`,
+              }}
+            />
+          );
+        })}
+
+        {/* Dark gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-slate-950/30 to-slate-950" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center px-4 text-center">
-        <p className="text-xs uppercase tracking-[0.35em] text-hopa-green/80">
+        <p className="text-xl uppercase tracking-[0.35em] text-hopa-green-800">
           Artvin Hopa Spor Kulübü
         </p>
 
