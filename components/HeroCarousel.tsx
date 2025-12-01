@@ -15,7 +15,7 @@ export default function HeroCarousel() {
   useEffect(() => {
     const id = setInterval(
       () => setActiveIndex((prev) => (prev + 1) % slides.length),
-      3000 // 1 saniye
+      3000 // 5 saniyede bir slayt değişimi
     );
     return () => clearInterval(id);
   }, []);
@@ -32,12 +32,19 @@ export default function HeroCarousel() {
         {slides.map((slide, index) => (
           <div
             key={slide.id}
-            className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${
-              index === activeIndex ? "opacity-100" : "opacity-0"
+            className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
+              index === activeIndex
+                ? "opacity-100 scale-110"
+                : "opacity-0 scale-100"
             }`}
-            style={{ backgroundImage: `url('${slide.imageUrl}')` }}
+            style={{
+              backgroundImage: `url('${slide.imageUrl}')`,
+              transition: "opacity 1.2s ease-in-out, transform 6s ease-out"
+            }}
           />
         ))}
+
+        {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-slate-950/30 to-slate-950" />
       </div>
 
@@ -46,10 +53,12 @@ export default function HeroCarousel() {
         <p className="text-xs uppercase tracking-[0.35em] text-hopa-green/80">
           Artvin Hopa Spor Kulübü
         </p>
+
         <h1 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
           Artvin Hopa&apos;nın enerjisini{" "}
           <span className="text-hopa-green">sahaya</span> taşıyoruz.
         </h1>
+
         <p className="mt-6 max-w-2xl text-sm text-slate-200 md:text-base">
           Hopa’nın yağmurlu sokaklarından doğan tutku, her maçta tekrar
           canlanıyor. Gençler, aileler ve tüm Hopa halkı için spor kültürünü
