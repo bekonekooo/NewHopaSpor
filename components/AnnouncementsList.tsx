@@ -45,7 +45,7 @@ export default function AnnouncementsList() {
                 </span>
               </div>
               <p className="text-xs sm:text-sm text-gray-700 line-clamp-3">
-                {a.content}
+                {a.description}
               </p>
               <span className="mt-1 text-xs text-green-700 font-medium">
                 Detayları gör →
