@@ -14,7 +14,7 @@ const initialAnnouncements: Announcement[] = [
     id: "1",
     title: "Hafta Sonu Maçı: Hopa Spor vs Rize",
     date: "2025-11-20",
-    content:
+    description:
       "Pazar günü saat 14:00’de Artvin Hopa Stadı’ndayız. Tüm taraftarlarımız davetlidir!\n\nBilet satışları maç günü stat gişesinden ve online sistem üzerinden yapılacaktır.",
     imageUrl: "/images/hero-1.jpg",
   },
@@ -22,7 +22,7 @@ const initialAnnouncements: Announcement[] = [
     id: "2",
     title: "Yeni Transfer Açıklandı",
     date: "2025-11-18",
-    content:
+    description:
       "Takımımıza katılan yeni oyuncumuzun detaylarını resmi hesaplarımızdan takip edebilirsiniz.\n\nBasın toplantısı çarşamba günü saat 13:00’te yapılacaktır.",
     imageUrl: "/images/hero-2.jpg",
   },
@@ -30,7 +30,7 @@ const initialAnnouncements: Announcement[] = [
     id: "3",
     title: "Altyapı Seçmeleri Başlıyor",
     date: "2025-11-15",
-    content:
+    description:
       "2008–2012 doğumlu gençler için altyapı seçmeleri başlıyor.\n\nBaşvuru için kulüp binamıza kimlik fotokopisi ile gelmeniz yeterlidir.",
     imageUrl: "/images/hero-3.jpg",
   },
