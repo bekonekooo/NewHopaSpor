@@ -2,6 +2,6 @@ export type Announcement = {
   id: string;
   title: string;
   description: string; // ✅ bunu ekle
-  imageUrl: string;
+   imageUrl?: string;       
   date: string;
 };
