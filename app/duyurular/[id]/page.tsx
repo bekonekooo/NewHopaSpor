@@ -60,7 +60,7 @@ export default function AnnouncementDetailPage() {
       )}
 
       <p className="mt-4 text-sm sm:text-base text-white-800 leading-relaxed whitespace-pre-line">
-        {announcement.content}
+        {announcement.description}
       </p>
     </div>
   );
